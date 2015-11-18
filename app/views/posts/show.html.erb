@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
 
+<p id="notice"><%= notice %></p>
+<div style="float:left; width:900px">
+<div style="float:left; width:400px">
+   <!-- <%= @post.image_path ? image_tag(@post.image_path) : image_tag('default.jpg') %>-->
+ <%= @post.image_path ? image_tag(@post.image_path.url, :size => "300x300") : image_tag('default.jpg') %>
+
+</div>
+<div style="float:left; width:500px">
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <%= @post.content ? @post.content : "" %>
 </p>
-
 <p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
+  <strong>Rating:</strong>
+  <%= @post.rating ? @post.rating : "" %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</div>
+</div>

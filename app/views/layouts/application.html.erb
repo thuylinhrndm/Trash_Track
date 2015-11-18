@@ -10,24 +10,31 @@
 <body>
 <div class="container">
 <nav>
-	<ul>
-	<li><%= link_to "Post", posts_path %></li>
-	<% if user_signed_in? %>
-	<li><%= link_to "Profile Settings", edit_user_registration_path %></li>
-	<li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-	<% else %>
-	<li><%= link_to "Log In", new_user_session_path %></li>
-	<li><%= link_to "Sign up now", new_user_registration_path %></li>
-	<% end %>
-	
 	<div>
-		<% if notice || alert %>
-		<%= "#{notice || ""}#{alert || ""}" %>
-		<% end %>
-	</div>
+	<% if user_signed_in? %>
+		<div style="float:left">
+		<p><%= link_to "Profile Settings", edit_user_registration_path %></p>
+		<p> <%= button_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+	</div>  
+		
+	<% else %>
+		<div style="float:left"><%= link_to "Sign up now", new_user_registration_path %> | <%= link_to "Log In", new_user_session_path %> | <%= link_to "Post", posts_path	%> 
+		</div>
+		
+	<% end %>
 
-	</ul>
+	</div>
+	<br/>
+	<br/>
+		<div>
+			<% if notice || alert %>
+			<%= "#{notice || ""}#{alert || ""}" %>
+			<% end %>
+		</div>
+	
+
 </nav>
+<br/>
 
 <%= yield %>
 </div>
