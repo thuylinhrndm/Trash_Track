@@ -22,13 +22,20 @@
     <%= f.label :rating %><br>
     <%= f.text_field :rating %>
   </div>
-   <div class="field">
-    <%= f.label :longditude %><br>
-    <%= f.text_field :longditude %>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
   </div>
-     <div class="field">
+   <div class="field">
     <%= f.label :latitude %><br>
     <%= f.text_field :latitude %>
+  </div>
+     <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :ip_address, value: current_user.current_sign_in_ip %>
   </div>
    
   <div>

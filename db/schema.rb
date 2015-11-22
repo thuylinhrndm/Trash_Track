@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122180713) do
+ActiveRecord::Schema.define(version: 20151122212711) do
 
   create_table "posts", force: true do |t|
     t.text     "content"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20151122180713) do
     t.datetime "updated_at"
     t.integer  "rating"
     t.string   "image_path"
-    t.float    "longditude"
+    t.float    "longitude"
     t.float    "latitude"
+    t.string   "ip_address"
+    t.string   "address"
   end
 
   create_table "users", force: true do |t|

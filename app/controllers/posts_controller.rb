@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @city = request.location.city
     @post = Post.new
   end
 
@@ -83,9 +84,8 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :user_id, :image_path, :rating)
+      params.require(:post).permit(:content, :user_id, :image_path, :rating, :ip_address, :lat, :lon, :address)
     end
 end

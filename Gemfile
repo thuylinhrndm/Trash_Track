@@ -1,15 +1,17 @@
 source 'https://rubygems.org'
 
+
+ruby '2.0.0'
+
 gem 'gon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 
-group :production, :staging do
-gem 'pg'
-gem 'rails_12factor'
-
+group :staging, :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
@@ -33,7 +35,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 
 gem 'carrierwave'
-gem 'rmagick', '2.15.4'
+gem 'rmagick'
 gem 'fog'
 
 # Google Map gem file
@@ -54,4 +56,4 @@ gem 'geocoder'
 # gem 'debugger', group: [:development, :test]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin]
