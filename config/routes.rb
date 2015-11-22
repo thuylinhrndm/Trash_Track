@@ -1,5 +1,7 @@
 
 Rails.application.routes.draw do
+  get 'maps/map'
+
   devise_for :users
   resources :posts
 

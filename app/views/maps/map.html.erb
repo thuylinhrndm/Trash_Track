@@ -1,0 +1,19 @@
+<p>Google Map</p>
+<div id="googleMap" style="width:500px;height:380px;">
+	
+</div>
+
+
+
+<!--Google Maps Script-->
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(50,10),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>

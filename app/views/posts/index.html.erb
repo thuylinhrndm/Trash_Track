@@ -22,7 +22,7 @@
         <td><%= post.content ? post.content : "No content" %></td>
         <td><%= post.rating ? post.rating : "No rating"  %></td>
         <td><%= post.image_path ? post.image_path :  "No image" %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Show', post, remote: :true %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= button_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -34,31 +34,13 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<div style="width: 400px; height: 400px">
-  <div id="map" style='width: 400px; height: 400px;'> GOOGLE MAP HERE</div>
-
+<div>
+  <p>Google Map</p>
+  <%= image_tag('https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Clabel:C%7C40.718217,-73.998284
+&key=AIzaSyCpYdeT4fzSt405zZeIs44460rQVH5FncE') %>
 </div>
-
-<script type='text/javascript'>
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers([
-    {
-      "lat": 0,
-      "lng": 0,
-      "picture": {
-        "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-        "width":  32,
-        "height": 32
-      },
-      "infowindow": "hello!"
-    }
-  ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-
-</script>
 
 
 
