@@ -8,7 +8,7 @@ gem 'sqlite3', group: :development
 
 group :production, :staging do
 gem 'pg'
- gem 'rails_12factor'
+gem 'rails_12factor'
 
 end
 
@@ -35,6 +35,11 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick', '2.15.4'
 gem 'fog'
+
+# Google Map gem file
+gem 'gmaps4rails'
+gem 'geocoder'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
