@@ -41,46 +41,10 @@
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 </div>
-
+<br/>
 <!--Google Map Div-->
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
+<div style='width: 900px;'>
 
-<script type="text/javascript">
-  handler = Gmaps.build('Google');
-handler.buildMap({
-    provider: {
-      disableDefaultUI: true
-      // pass in other Google Maps API options here
-    },
-    internal: {
-      id: 'map'
-    }
-  },
-  function(){
-    markers = handler.addMarkers([
-      {
-        "lat": 0,
-        "lng": 0,
-        "picture": {
-          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": "hello!"
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  }
-);
-</script>
-
-<div>
-  <p>Google Map</p>
   <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@post.address}&zoom=13&size=600x300&maptype=roadmap
-&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-&markers=color:red%7Clabel:C%7C40.718217,-73.998284
-&key=AIzaSyCpYdeT4fzSt405zZeIs44460rQVH5FncE") %>
+&markers=color:blue%7Clabel:S%7C#{@post.latitude},#{@post.longitude}&key=AIzaSyCpYdeT4fzSt405zZeIs44460rQVH5FncE") %>
 </div>
