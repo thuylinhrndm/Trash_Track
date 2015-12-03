@@ -2,9 +2,9 @@
 <h1>Listing posts</h1>
 <%= link_to 'New Post', new_post_path %>
 <br/><br/>
-<div style="width:800px" >
+<div style="width:900px" >
 <% @posts.each do |post| %>
-<div style="float: left; width:400px">
+<div style="float: left; width:500px">
 <p>
   <strong>Content:</strong>
  <%= post.content ? post.content : "No content" %>
@@ -37,7 +37,7 @@
 <%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= button_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <br/>
 </div>
-<div style="float: left; width:400px">
+<div style="float:left; width:400px">
 <%= render partial: 'viewer', locals: {info: post} %>
 </div>
 </div>
