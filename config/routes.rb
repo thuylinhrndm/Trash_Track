@@ -1,5 +1,13 @@
 
 Rails.application.routes.draw do
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :posts
+    end
+  end
+  
+
   get 'maps/map'
 
   devise_for :users
@@ -15,7 +23,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'post#index'
-  root 'posts#index'
+  
+
+  #api routes
+
+  get 'api/create/:user_id/:content/:address/:rating/:image_path', to: "api#create"
+
+
+
+
+
+  root to: 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

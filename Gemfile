@@ -1,11 +1,20 @@
 source 'https://rubygems.org'
 
+
 gem 'gon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 
+gem 'httparty'
+gem 'kaminari'
+gem 'rabl'
+gem 'oj'
+
+#gem 'rails-api'
+
+gem 'rocket_pants'
 group :staging, :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -38,6 +47,7 @@ gem 'fog'
 # Google Map gem file
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'responders'
 
 
 # Use ActiveModel has_secure_password
