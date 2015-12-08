@@ -1,12 +1,18 @@
-<p id="notice"><%= notice %></p>
-<div style="float:left; width:900px">
-<div style="float:left; width:300px">
-   <!-- <%= @post.image_path ? image_tag(@post.image_path) : image_tag('default.jpg') %>-->
- <%= @post.image_path ? image_tag(@post.image_path.url, :size => "250x250") : image_tag('default.jpg') %>
+<div class="row">
 
+<div class="small-12 columns">
+<div class="form-style-3">
+<div class="small-4 columns">
+<fieldset>
+
+   <!-- <%= @post.image_path ? image_tag(@post.image_path) : image_tag('default.jpg') %>-->
+ <%= @post.image_path ? image_tag(@post.image_path.url, :size => "300x250") : image_tag('default.jpg') %>
+
+</fieldset>
 </div>
 
-<div style="float:left ; width:300px">
+<div class="small-4 columns">
+<fieldset>
 <p>
   <strong>Content:</strong>
   <%= @post.content ? @post.content : "" %>
@@ -35,14 +41,23 @@
   <strong>IP Address:</strong>
   <%= @post.ip_address ? @post.ip_address : "No IP Address detected" %>
 </p>
-
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</fieldset>
 </div>
-<br/>
+<div class="small-4 columns">
+<fieldset>
 <!--Google Map Div-->
-<div style="float:left; width:300px">
-
   <%= render partial: 'viewer', locals: {info: @post} %>
+</fieldset>
+</div>
+
 </div>
 </div>
+
+</div>
+
+
+
+
+

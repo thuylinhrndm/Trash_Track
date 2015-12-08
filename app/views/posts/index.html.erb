@@ -1,10 +1,21 @@
+ <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
-<h1>Listing posts</h1>
-<%= link_to 'New Post', new_post_path %>
-<br/><br/>
-<div style="width:900px" >
+<div class="row">
+<div class="small-12 columns">
+
+  <h3 class="form-style-8" >Listing posts</h3>
+  
 <% @posts.each do |post| %>
-<div style="float: left; width:500px">
+
+<div class="row">
+<div class="medium-6 columns">
+<div class="profile-card">
+
+
+<%= render partial: 'viewer', locals: {info: post} %>
+
+ <div class="profile-info">
+
 <p>
   <strong>Content:</strong>
  <%= post.content ? post.content : "No content" %>
@@ -33,13 +44,18 @@
    <%= post.longitude ? post.longitude :  "No longitude" %>
 
 </p>
-<br/>
-<%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= button_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-<br/>
+
+
+<p><%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= button_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
 </div>
-<div style="float:left; width:400px">
-<%= render partial: 'viewer', locals: {info: post} %>
 </div>
 </div>
 <% end %>
-<br/>
+</div>
+
+</div>
+
+
+
+
